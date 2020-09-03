@@ -5,11 +5,11 @@ FROM fedora:32
 RUN dnf update -y \
 && dnf -y install curl tar
 
-RUN curl -L -b "oraclelicense=a" -o jdk-8-linux-x64.tar.gz -O https://javadl.oracle.com/webapps/download/AutoDL?BundleId=242980_a4634525489241b9a9e1aa73d9e118e6     \
+RUN curl -L -b "oraclelicense=a" -o jdk-8-linux-x64.tar.gz -O https://javadl.oracle.com/webapps/download/AutoDL?BundleId=239835_230deb18db3e4014bb8e3e8324f81b43 \
 && mkdir -p /usr/lib/jvm/java-8 \
 && tar -zxf jdk-8-linux-x64.tar.gz -C /usr/lib/jvm/java-8
 
-ENV JAVA_HOME /usr/lib/jvm/java-8
+ENV JAVA_HOME /usr/lib/jvm/java-8/jdk1.8.0_221
 ENV PATH $JAVA_HOME/bin:$PATH
 
 # Install Maven
