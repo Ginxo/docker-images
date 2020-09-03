@@ -7,7 +7,8 @@ RUN dnf update -y \
 
 RUN curl -L -b "oraclelicense=a" -o jdk-8-linux-x64.tar.gz -O https://javadl.oracle.com/webapps/download/AutoDL?BundleId=239835_230deb18db3e4014bb8e3e8324f81b43 \
 && mkdir -p /usr/lib/jvm/java-8 \
-&& tar -zxf jdk-8-linux-x64.tar.gz -C /usr/lib/jvm/java-8
+&& tar -zxf jdk-8-linux-x64.tar.gz -C /usr/lib/jvm/java-8 \
+&& rm jdk-8-linux-x64.tar.gz
 
 ENV JAVA_HOME /usr/lib/jvm/java-8/jdk1.8.0_221
 ENV PATH $JAVA_HOME/bin:$PATH
